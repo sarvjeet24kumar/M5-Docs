@@ -59,3 +59,16 @@ uv run locust -f tests/performance/locustfile.py
 ![Get Users](assets/users.png)
 ![Get Users](assets/genres.png)
 ![Get Users](assets/books.png)
+
+
+
+
+
+## New Relic 
+![Get Users](assets/1.png)
+
+
+
+
+![Get Users](assets/2.png)
+
