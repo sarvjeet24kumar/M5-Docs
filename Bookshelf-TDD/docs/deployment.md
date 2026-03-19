@@ -8,54 +8,8 @@ BookShelf automated CI/CD pipeline built on GitHub Actions. Every push to `main`
 
 ## Pipeline Flow
 
-```mermaid
-flowchart LR
-    A([Push / PR to branch]) --> TEST
 
-    subgraph TEST ["CI Tests"]
-        direction TB
-        subgraph SVC ["Service Containers"]
-            direction LR
-            PG[postgres:15-alpine] ~~~ RD[redis:7-alpine]
-        end
-        B[test job] --> SVC
-        SVC --> C[Install uv + Python]
-        C --> D[Cache + sync deps]
-        D --> E[Run Migrations]
-        E --> F[Create Superadmin]
-        F --> G[pytest --cov]
-    end
-
-    TEST --> GATE{Tests passed?}
-    GATE -- no --> FAIL([Fail])
-    GATE -- yes --> BUILD
-
-    subgraph BUILD ["Build and Scan - push events only"]
-        direction TB
-        H[Login to DockerHub] --> I[docker build<br/>:latest + :sha]
-        I --> J[Trivy Scan<br/>CRITICAL severity]
-        J --> K{Scan passed?}
-        K -- no --> ABORT([Abort])
-        K -- yes --> L[Push :sha tag]
-        L --> M{feat branch?}
-        M -- no --> SKIP([Done - no deploy])
-        M -- yes --> N[Push :latest tag]
-    end
-
-    N --> DEPLOY
-
-    subgraph DEPLOY ["Deploy - feat branches only"]
-        direction TB
-        O[SSH into EC2] --> P[git fetch + pull branch]
-        P --> Q[Write .env from secret]
-        Q --> R[docker login]
-        R --> S[docker pull :latest]
-        S --> T[docker compose up -d<br/>--force-recreate]
-    end
-
-    T --> DONE([Live])
-```
-
+![Get Users](assets/flow.png)
 ---
 
 ## Pipeline Triggers
