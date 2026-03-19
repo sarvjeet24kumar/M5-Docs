@@ -4,7 +4,7 @@ This documentation provides an overview of BookShelf’s architecture, testing, 
 
 - **BookShelf** is a high-performance, multi-tenant book management API built with Django.
 - The system is optimized for scalability and reliability.
-- We implemented **200+ automated tests** using pytest.
+- We implemented **170+ automated tests** using pytest.
 - We ran **Locust load testing** for 100+ concurrent users.
 - We deployed a containerized CI/CD pipeline on **AWS EC2** and Database on **AWS RDS**.
 - We use performance optimization tools and deep APM monitoring for continuous improvement.
