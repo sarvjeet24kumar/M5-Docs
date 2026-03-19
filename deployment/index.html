@@ -357,6 +357,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pipeline-triggers" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -552,6 +563,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pipeline-triggers" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -712,52 +734,7 @@
 <p>BookShelf automated CI/CD pipeline built on GitHub Actions. Every push to <code>main</code>, <code>feat/test-cicd</code> triggers a test run. On push events, a Docker image is built, scanned for vulnerabilities, and deployed to an AWS EC2 instance.</p>
 <hr />
 <h2 id="pipeline-flow">Pipeline Flow</h2>
-<pre class="mermaid"><code>flowchart LR
-    A([Push / PR to branch]) --&gt; TEST
-
-    subgraph TEST ["CI Tests"]
-        direction TB
-        subgraph SVC ["Service Containers"]
-            direction LR
-            PG[postgres:15-alpine] ~~~ RD[redis:7-alpine]
-        end
-        B[test job] --&gt; SVC
-        SVC --&gt; C[Install uv + Python]
-        C --&gt; D[Cache + sync deps]
-        D --&gt; E[Run Migrations]
-        E --&gt; F[Create Superadmin]
-        F --&gt; G[pytest --cov]
-    end
-
-    TEST --&gt; GATE{Tests passed?}
-    GATE -- no --&gt; FAIL([Fail])
-    GATE -- yes --&gt; BUILD
-
-    subgraph BUILD ["Build and Scan - push events only"]
-        direction TB
-        H[Login to DockerHub] --&gt; I[docker build&lt;br/&gt;:latest + :sha]
-        I --&gt; J[Trivy Scan&lt;br/&gt;CRITICAL severity]
-        J --&gt; K{Scan passed?}
-        K -- no --&gt; ABORT([Abort])
-        K -- yes --&gt; L[Push :sha tag]
-        L --&gt; M{feat branch?}
-        M -- no --&gt; SKIP([Done - no deploy])
-        M -- yes --&gt; N[Push :latest tag]
-    end
-
-    N --&gt; DEPLOY
-
-    subgraph DEPLOY ["Deploy - feat branches only"]
-        direction TB
-        O[SSH into EC2] --&gt; P[git fetch + pull branch]
-        P --&gt; Q[Write .env from secret]
-        Q --&gt; R[docker login]
-        R --&gt; S[docker pull :latest]
-        S --&gt; T[docker compose up -d&lt;br/&gt;--force-recreate]
-    end
-
-    T --&gt; DONE([Live])</code></pre>
-<hr />
+<h2 id="_1"><img alt="Get Users" src="../assets/flow.png" /></h2>
 <h2 id="pipeline-triggers">Pipeline Triggers</h2>
 <p>Defined in <code>.github/workflows/ci-cd.yml</code>:</p>
 <table>
