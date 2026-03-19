@@ -1,19 +1,17 @@
-# BookShelf  Project Documentation
+# **Milestone 5 Demo - Testing, Optimization and Deployment**
 
-Welcome to the technical documentation for **BookShelf **, a multi-tenant, performance-optimized Django REST Framework (DRF) application. This project is built with a focus on Test-Driven Development (TDD), high-concurrency optimization, and automated cloud deployment.
+This documentation provides an overview of BookShelf’s architecture, testing, deployment, and optimization strategies.
 
-## Project Overview
+- **BookShelf** is a high-performance, multi-tenant book management API built with Django.
+- The system is optimized for scalability and reliability.
+- We implemented **200+ automated tests** using pytest.
+- We ran **Locust load testing** for 100+ concurrent users.
+- We deployed a containerized CI/CD pipeline on **AWS EC2** and Database on **AWS RDS**.
+- We use performance optimization tools and deep APM monitoring for continuous improvement.
 
-BookShelf  is a book management system that supports multiple tenants (organizations). It features robust authentication, book inventory management, and automated library tracking.
+## Overview
 
-### Core Tech Stack
-
-*   **Backend**: Django 5.x, Django REST Framework
-*   **Database**: PostgreSQL
-*   **Caching/Broker**: Redis
-*   **Task Queue**: Celery
-*   **Profiling**: Pyinstrument, Silk, Django Debug Toolbar, Locust, New Relic
-*   **Testing**: Pytest, FactoryBoy
-*   **Deployment**: Docker, Nginx, AWS EC2,RDS, GitHub Actions
-
+- **[Testing](tdd.md)**: Explore our comprehensive test suite, tools, and coverage results.
+- **[Deployment](deployment.md)**: Understand our CI/CD pipeline and production infrastructure.
+- **[Optimization & Monitoring](optimization.md)**: Details on performance profiling, SQL optimization, and monitoring tools.
 

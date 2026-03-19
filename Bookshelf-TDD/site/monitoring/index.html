@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../deployment/">
+      
       
       
         
@@ -19,7 +21,7 @@
     
     
       
-        <title>API Reference - BookShelf Documentation</title>
+        <title>Monitoring - BookShelf Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-reference" class="md-skip">
+        <a href="#new-relic" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API Reference
+              Monitoring
             
           </span>
         </div>
@@ -293,6 +295,87 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new-relic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Relic
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -310,8 +393,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -320,21 +401,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
+  <a href="#new-relic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#primary-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Primary Endpoints
+        New Relic
       
     </span>
   </a>
@@ -358,53 +428,11 @@
 
 
 
-<h1 id="api-reference">API Reference</h1>
-<p>The BookShelf 2 API is a RESTful interface returning JSON. All endpoints (except Auth/Health) require a valid JWT Access Token.</p>
-<h2 id="authentication">Authentication</h2>
-<p><strong>Header</strong>: <code>Authorization: Bearer &lt;access_token&gt;</code></p>
-<h2 id="primary-endpoints">Primary Endpoints</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Method</th>
-<th style="text-align: left;">Endpoint</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Permission</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>POST</code></td>
-<td style="text-align: left;"><code>/api/v1/auth/login/</code></td>
-<td style="text-align: left;">Obtain JWT Tokens</td>
-<td style="text-align: left;">Public</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>GET</code></td>
-<td style="text-align: left;"><code>/api/v1/books/</code></td>
-<td style="text-align: left;">List tenant books</td>
-<td style="text-align: left;">Tenant Member</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>POST</code></td>
-<td style="text-align: left;"><code>/api/v1/books/</code></td>
-<td style="text-align: left;">Add a new book</td>
-<td style="text-align: left;">Tenant Member</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>PATCH</code></td>
-<td style="text-align: left;"><code>/api/v1/books/{id}/</code></td>
-<td style="text-align: left;">Update book details</td>
-<td style="text-align: left;">Admin/Owner</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>GET</code></td>
-<td style="text-align: left;"><code>/api/v1/users/</code></td>
-<td style="text-align: left;">List organization users</td>
-<td style="text-align: left;">Admin</td>
-</tr>
-</tbody>
-</table>
+  <h1>Monitoring</h1>
+
+<h2 id="new-relic">New Relic</h2>
+<p><img alt="Get Users" src="../assets/1.png" /></p>
+<p><img alt="Get Users" src="../assets/2.png" /></p>
 
 
 
