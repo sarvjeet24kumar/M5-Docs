@@ -57,4 +57,4 @@ uv run pytest --cov=. --cov-report=html
 
 ## Report 
 
-<iframe src="/assets/index.html" width="100%" height="1500px"></iframe>
+<iframe src="../assets/index.html" width="100%" height="1500px"></iframe>

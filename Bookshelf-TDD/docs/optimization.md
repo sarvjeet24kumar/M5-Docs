@@ -43,15 +43,15 @@ uv run locust -f tests/performance/locustfile.py
 ### Locust Load Testing 
 
 **Users - 100**
-<iframe src="/assets/locust.html" width="100%" height="1000px"></iframe>
+<iframe src="../assets/locust.html" width="100%" height="1000px"></iframe>
 
 ### Pyinstrument
 
 **Login API**
-<iframe src="/assets/pyinstrument_api_v1_auth_login.html" width="100%" height="500px"></iframe>
+<iframe src="../assets/pyinstrument_api_v1_auth_login.html" width="100%" height="500px"></iframe>
 
 **User Books API**
-<iframe src="/assets/pyinstrument_api_v1_books.html" width="100%" height="500px"></iframe>
+<iframe src="../assets/pyinstrument_api_v1_books.html" width="100%" height="500px"></iframe>
 
 ### Django Silk
 
